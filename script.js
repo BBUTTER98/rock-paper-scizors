@@ -1,25 +1,32 @@
-var iterator = 0;
+var player = 0;
+var computer = 0;
 function playRound(computerSelection, playerSelection){
     if(computerSelection == playerSelection){
-        return "it's draw, nobody wins";
+        alert("it's draw, nobody wins");
     }
     else if(computerSelection == "rock"  && playerSelection == "scizors"){
-        return "Computer wins, rock beats the paper";
+        alert("Computer wins, rock beats the paper");
+        computer++;
     }
     else if(computerSelection == "rock" && playerSelection == "paper"){
-        return "Player wins, paper beats the rock";
+        alert("Player wins, paper beats the rock");
+        player++;
     }
     else if(computerSelection == "paper" && playerSelection == "scizors"){
-        return "Player wins, scizors beats the paper";
+        alert("Player wins, scizors beats the paper");
+        player++;
     }
     else if(computerSelection == "paper" && playerSelection == "rock"){
-        return "Computer wins, paper beats the rock";
+        alert("Computer wins, paper beats the rock");
+        computer++;
     }
     else if(computerSelection == "scizors" && playerSelection=="paper"){
-        return "Computer wins, scizors beats the paper";
+        alert("Computer wins, scizors beats the paper");
+        computer++;
     }
     else if(computerSelection == "scizors" && playerSelection=="rock"){
-        return "Player wins, rock beats the scizors";
+        alert("Player wins, rock beats the scizors");
+        player++;
     }
 }
 function getComputerChoice(){
@@ -27,6 +34,22 @@ function getComputerChoice(){
     let random = Math.floor(Math.random()*3);
     return choice[random];
 }
-let computerSelection = getComputerChoice();
-let playerSelection = "rock";
-playRound(computerSelection,playerSelection);
+
+function game(){
+    for(let i=0;i<5;i++){
+        let computerSelection =getComputerChoice();
+        let playerSelection = prompt("podaj zmienną");
+        playRound(computerSelection,playerSelection);
+        alert(player+" : "+computer);
+    }
+    if(player>computer){
+        alert("player wins "+player+" to "+computer);
+    }
+    else if(computer>player){
+        alert("computer wins "+computer+" to "+player);
+    }
+    else{
+        alert("draw");
+    }
+}
+
