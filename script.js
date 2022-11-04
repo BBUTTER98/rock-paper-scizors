@@ -28,6 +28,9 @@ function playRound(computerSelection, playerSelection){
         alert("Player wins, rock beats the scizors");
         player++;
     }
+    else{
+        alert("bad input");
+    }
 }
 function getComputerChoice(){
     let choice = ['rock','paper','scizors'];
@@ -49,7 +52,7 @@ function game(){
         alert("computer wins "+computer+" to "+player);
     }
     else{
-        alert("draw");
+        alert("draw"+player+" to "+computer+" for the user");
     }
 }
 
