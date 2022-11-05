@@ -41,7 +41,7 @@ function getComputerChoice(){
 function game(){
     for(let i=0;i<5;i++){
         let computerSelection =getComputerChoice();
-        let playerSelection = prompt("podaj zmienną");
+        let playerSelection = prompt("select rock, paper or scizors");
         playRound(computerSelection,playerSelection);
         alert(player+" : "+computer);
     }
